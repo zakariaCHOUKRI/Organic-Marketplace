@@ -14,15 +14,14 @@
 3. **Search and Filter Functionality:**
    - Buyers should be able to search for products by category, location, and keywords.
    - The search results should display relevant product listings.
-
-4. **Authentication and Security:**
-   - Users should be required to log in to access certain features.
-   - Passwords must be securely stored and hashed.
+   
 
 ### Non-Functional Requirements:
 
 1. **Security:**
    - The platform must implement robust security measures, including data encryption, secure user authentication, and protection against common web vulnerabilities (e.g., SQL injection, cross-site scripting).
+   - Users should be required to log in to access certain features.
+   - Passwords must be securely stored and hashed.
    
 2. **Usability:**
    - The user interface should be intuitive and user-friendly, making it easy for both sellers and buyers to navigate and use the platform.
