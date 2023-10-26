@@ -19,5 +19,3 @@
 3. As a seller, I want to edit my existing product listings to keep my product information up-to-date.
 
 4. As a seller, I want to delete product listings that are no longer available or relevant to keep my storefront organized.
-
-5. As a seller, I want to add a new organic product listing to my store.
