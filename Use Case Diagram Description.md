@@ -29,8 +29,8 @@ The diagram showcases the primary actors in the organic marketplace ecosystem, n
 
 ### Sell Products:
 
-Initiating Actor: *Seller*
-Description: Sellers can add and manage products available for sale.
+- Initiating Actor: *Seller*
+- Description: Sellers can add and manage products available for sale.
 
 ### Earnings Dashboard:
 
