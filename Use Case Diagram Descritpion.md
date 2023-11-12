@@ -14,7 +14,7 @@ The diagram showcases the primary actors in the organic marketplace ecosystem, n
 
 ### User Authentication:
 
-Initiating Actor: User
+Initiating Actor: User.
 Description: Users can log in or register on the platform for authentication.
 
 ### Search and Filter Functionality:
