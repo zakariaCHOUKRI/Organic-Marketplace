@@ -1,0 +1,56 @@
+@startuml
+
+class User {
+  -userId: int
+  -username: string
+  -password: string
+  -email: string
+  +createAccount(): void
+  +logIn(): void
+}
+
+class Seller extends User{
+  -sellerId: int
+  -contactDetails: string
+  +addProduct(): void
+  +editProduct(): void
+  +deleteProduct(): void
+}
+
+class Buyer extends User{
+  -buyerId: int
+  -location: string
+  +searchProducts(): void
+  +filterProducts(): void
+}
+
+class Product {
+  -productId: int
+  -name: string
+  -description: string
+  -price: double
+  -category: string
+  -images: string[]
+  +viewDetails(): void
+}
+
+class Location {
+  -locationId: int
+  -name: string
+  +displayLocalProducts(): void
+}
+
+class OnlinePlatform {
+  -platformId: int
+  +authenticateUser(): void
+  +interactWithProducts(): void
+}
+
+OnlinePlatform --o User
+OnlinePlatform --o Product
+
+Product --o Location
+
+Seller --o Product
+
+@enduml
