@@ -1,0 +1,24 @@
+@startuml
+
+actor User as "User"
+actor Seller as "Seller"
+actor Buyer as "Buyer"
+participant "Online Platform" as Platform
+
+User -> Platform: Log In
+Platform --> User: Authentication Response
+
+User -> Platform: Search Products
+Platform --> User: Product Listings
+
+User -> Platform: Filter Products
+Platform --> User: Filtered Product Listings
+
+Seller -> Platform: Add Product
+Platform --> Seller: Product Added Confirmation
+
+Buyer -> Platform: Access Product
+Platform --> Buyer: Get Product Information
+
+
+@enduml
