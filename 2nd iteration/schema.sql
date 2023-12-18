@@ -2,21 +2,9 @@ CREATE TABLE User (
   userId INT PRIMARY KEY,
   username VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE Seller (
-  sellerId INT PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
   contactDetails VARCHAR(255) NOT NULL,
-  userId INT,
-  FOREIGN KEY (userId) REFERENCES User(userId)
-);
-
-CREATE TABLE Buyer (
-  buyerId INT PRIMARY KEY,
   location VARCHAR(255) NOT NULL,
-  userId INT,
-  FOREIGN KEY (userId) REFERENCES User(userId)
 );
 
 CREATE TABLE Product (
@@ -25,17 +13,13 @@ CREATE TABLE Product (
   description VARCHAR(255),
   price DOUBLE,
   category VARCHAR(255),
-  sellerId INT,
-  FOREIGN KEY (sellerId) REFERENCES Seller(sellerId)
+  userId INT,
+  FOREIGN KEY (userId) REFERENCES User(userId)
 );
 
 CREATE TABLE Location (
   locationId INT PRIMARY KEY,
   name VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE OnlinePlatform (
-  platformId INT PRIMARY KEY
 );
 
 CREATE TABLE ProductLocation (
