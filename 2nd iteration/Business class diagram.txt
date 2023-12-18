@@ -5,23 +5,13 @@ class User {
   -username: string
   -password: string
   -email: string
+  -contactDetails: string
   +createAccount(): void
   +logIn(): void
-}
-
-class Seller extends User{
-  -sellerId: int
-  -contactDetails: string
-  +addProduct(): void
-  +editProduct(): void
-  +deleteProduct(): void
-}
-
-class Buyer extends User{
-  -buyerId: int
-  -location: string
-  +searchProducts(): void
-  +filterProducts(): void
+  +postAd(): void
+  +browseAds(): void
+  +deleteAd(): void
+  +editAd(): void
 }
 
 class Product {
@@ -30,7 +20,7 @@ class Product {
   -description: string
   -price: double
   -category: string
-  -images: string[]
+  -images: blob
   +viewDetails(): void
 }
 
@@ -40,17 +30,9 @@ class Location {
   +displayLocalProducts(): void
 }
 
-class OnlinePlatform {
-  -platformId: int
-  +authenticateUser(): void
-  +interactWithProducts(): void
-}
-
-OnlinePlatform --o User
-OnlinePlatform --o Product
-
 Product --o Location
+Product --o User
 
-Seller --o Product
+User --o Location
 
 @enduml

@@ -4,7 +4,8 @@ CREATE TABLE User (
   password VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   contactDetails VARCHAR(255) NOT NULL,
-  location VARCHAR(255) NOT NULL,
+  locationId INT,
+  FOREIGN KEY (locationId) REFERENCES Location(locationId)
 );
 
 CREATE TABLE Product (
@@ -14,18 +15,12 @@ CREATE TABLE Product (
   price DOUBLE,
   category VARCHAR(255),
   userId INT,
-  FOREIGN KEY (userId) REFERENCES User(userId)
+  locationId INT,
+  FOREIGN KEY (userId) REFERENCES User(userId),
+  FOREIGN KEY (locationId) REFERENCES Location(locationId)
 );
 
 CREATE TABLE Location (
   locationId INT PRIMARY KEY,
   name VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE ProductLocation (
-  productId INT,
-  locationId INT,
-  PRIMARY KEY (productId, locationId),
-  FOREIGN KEY (productId) REFERENCES Product(productId),
-  FOREIGN KEY (locationId) REFERENCES Location(locationId)
 );

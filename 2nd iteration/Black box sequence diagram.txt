@@ -17,6 +17,12 @@ Platform --> User: Filtered Product Listings
 Seller -> Platform: Add Product
 Platform --> Seller: Product Added Confirmation
 
+Seller -> Platform: Edit Product
+Platform --> Seller: Product Edited Confirmation
+
+Seller -> Platform: Delete Product
+Platform --> Seller: Product Deleted Confirmation
+
 Buyer -> Platform: Access Product
 Platform --> Buyer: Get Product Information
 
