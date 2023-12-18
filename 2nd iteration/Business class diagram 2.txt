@@ -1,0 +1,43 @@
+@startuml
+
+class User {
+  -userId: int
+  -username: string
+  -password: string
+  -email: string
+  -contactDetails: string
+  -location: string
+  +createAccount(): void
+  +logIn(): void
+  +postAd(): void
+  +browseAds(): void
+}
+
+class Product {
+  -productId: int
+  -name: string
+  -description: string
+  -price: double
+  -category: string
+  -images: string[]
+  +viewDetails(): void
+}
+
+class Location {
+  -locationId: int
+  -name: string
+  +displayLocalProducts(): void
+}
+
+class OnlinePlatform {
+  -platformId: int
+  +authenticateUser(): void
+  +interactWithProducts(): void
+}
+
+OnlinePlatform --o User
+OnlinePlatform --o Product
+
+Product --o Location
+
+@enduml
