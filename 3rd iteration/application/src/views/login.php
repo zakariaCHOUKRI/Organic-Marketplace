@@ -37,7 +37,7 @@
             <div class="login">
                 <form action="../controllers/LoginController.php" method="post">
                     <label for="chk" aria-hidden="true">Login</label>
-                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="username" name="username" placeholder="Username" required>
                     <input type="password" name="password" placeholder="Password" required>
                     <button>Login</button>
                 </form>
@@ -52,5 +52,15 @@
     <div class="erreur">
         <?php include_once '../controllers/LoginError.php' ?>
     </div>
+    <?php
+    if (isset($_GET['error'])) {
+        if ($_GET['error'] == 0) {
+            echo '<div id="error-popup">Incorrect username or password. Please try again.<button id="close-btn">Close</button></div>';
+        }
+        else if ($_GET['error'] == 1) {
+            echo '<div id="error-popup">Email or username already used. Please try again.<button id="close-btn">Close</button></div>';
+        }
+    }
+    ?>
 </body>
 </html>

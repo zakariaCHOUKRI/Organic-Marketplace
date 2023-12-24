@@ -14,20 +14,7 @@ class LoginController {
     }
 
     public function loginUser($username, $password) {
-        // Implement validation if needed
-
-        $user = $this->userModel->getUserByUsername($username);
-
-        if ($user && password_verify($password, $user['password'])) {
-            // Login successful
-            $_SESSION['user_id'] = $user['userId'];
-            $_SESSION['username'] = $user['username'];
-            echo "Login successful!";
-        } else {
-            // Login failed
-            http_response_code(401); // Unauthorized
-            echo "Login failed. Please check your username and password.";
-        }
+        $this->userModel->login($username, $password);
     }
 }
 
@@ -35,9 +22,13 @@ class LoginController {
 $username = $_POST['username'];
 $password = $_POST['password'];
 
+
+
 try {
+
     $loginController = new LoginController();
     $loginController->loginUser($username, $password);
+
 } catch (Exception $e) {
     // Send an error response to the frontend
     http_response_code(500); // Internal Server Error

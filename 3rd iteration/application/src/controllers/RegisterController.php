@@ -14,8 +14,6 @@ class RegisterController {
     }
 
     public function registerUser($username, $password, $email, $contactDetails) {
-        // Implement validation if needed
-
         $this->userModel->createAccount($username, $password, $email, $contactDetails);
     }
 }
