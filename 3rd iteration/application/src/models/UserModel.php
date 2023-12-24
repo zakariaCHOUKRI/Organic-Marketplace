@@ -1,5 +1,9 @@
 <?php
 
+if (!isset($_SESSION)) {
+    session_start();
+}
+
 require_once('Database.php');
 
 // This class uses the sigleton design pattern
@@ -39,7 +43,7 @@ class UserModel {
     
             if ($count > 0) {
                 // Username or email already exists, redirect to a page of your choice
-                header("Location: duplicate_user_error.php");
+                header("Location: ../views/login.php?error=1");
                 exit();
             }
     
@@ -51,8 +55,36 @@ class UserModel {
             throw new Exception("Error creating user account: " . $e->getMessage());
         }
     }
-    
 
-    // Other user-related methods...
+    public function login($username, $password) {
+        if (empty($username) || empty($password)) {
+            // Handle validation error (throw exception, return error message, etc.)
+            throw new Exception("All fields are required");
+        }
+    
+        // Sanitize input parameters
+        $username = filter_var($username, FILTER_SANITIZE_STRING);
+        $password = filter_var($password, FILTER_SANITIZE_STRING);
+    
+        try {
+            // Use PDO prepared statement to retrieve user data from the database
+            $stmt = $this->db->prepare("SELECT * FROM User WHERE username = ?");
+            $stmt->execute([$username]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($user && password_verify($password, $user['password'])) {
+                $_SESSION["username"] = $username;
+                header('Location: ../views/home.php');
+                return true;
+            } else {
+                header("Location: ../views/login.php?error=0");
+                return false;
+            }
+        } catch (PDOException $e) {
+            // Handle database error (throw exception, log error, etc.)
+            throw new Exception("Error during login: " . $e->getMessage());
+        }
+    }
+
 }
 ?>
