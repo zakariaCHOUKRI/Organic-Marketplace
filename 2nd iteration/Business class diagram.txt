@@ -19,7 +19,7 @@ class Product {
   -name: string
   -description: string
   -price: double
-  -category: string
+  -category: Category
   -images: blob
   +viewDetails(): void
 }
@@ -30,9 +30,25 @@ class Location {
   +displayLocalProducts(): void
 }
 
+enum Category {
+  Fruits/Vegetables
+  Herbs
+  Dairy
+  Eggs
+  Meat/Poultry
+  Coffee/Tea/Juice
+  Snacks
+  Condiments/Sauces
+  Prepared Foods
+  Home/Personal Care
+  Pet Supplies
+  Oils
+  Other
+}
+
 Product --o Location
 Product --o User
+Product --o Category
 
-User --o Location
 
 @enduml

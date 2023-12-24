@@ -9,7 +9,7 @@ body{
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	background: linear-gradient(to bottom, #43ac60, #6aa4ad);
+	background: linear-gradient(to bottom, #2ecc40, #e7ecec);
 }
 .main{
 	width: 350px;

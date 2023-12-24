@@ -1,69 +1,46 @@
 <?php
-session_start();
-require '../models/User.php';
-require '../dbconfig.php';
-class LoginController
-{
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+require_once('../models/UserModel.php');
+
+class LoginController {
     private $userModel;
-    public function __construct(User $userModel)
-    {
-        $this->userModel = $userModel;
+
+    public function __construct() {
+        $this->userModel = UserModel::getInstance();
     }
-    public function login()
-    {
-        try
-        {
-            $user=$this->userModel->login($_POST['email'], $_POST['password']);
-        }
-        catch(Exception $e)
-        {
-            echo $e->getMessage();
-        }
-        if ($user) {
-            switch ($_SESSION["role"]) {
-                case 'admin':
-                    header("location: ../views/AdminDashboard.php");
-                    break;
-                case 'sales':
-                    header("location: ../views/SalesDashboard.php");
-                    break;
-                case 'logistics':
-                    header("location: ../views/LogisticsDashboard.php");
-                    break;
-                case 'adv':
-                    header("location: ../views/AdvDashboard.php");
-                    break;
-            }
-            
+
+    public function loginUser($username, $password) {
+        // Implement validation if needed
+
+        $user = $this->userModel->getUserByUsername($username);
+
+        if ($user && password_verify($password, $user['password'])) {
+            // Login successful
+            $_SESSION['user_id'] = $user['userId'];
+            $_SESSION['username'] = $user['username'];
+            echo "Login successful!";
         } else {
-            header("location: ../views/login_page.php?error=0");
+            // Login failed
+            http_response_code(401); // Unauthorized
+            echo "Login failed. Please check your username and password.";
         }
     }
-
 }
 
+// Retrieve data from the POST request
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-$user= new User($conn);
-$loginController = new LoginController($user);
-if(isset($_POST['email']))
-{
-    $loginController->login();
+try {
+    $loginController = new LoginController();
+    $loginController->loginUser($username, $password);
+} catch (Exception $e) {
+    // Send an error response to the frontend
+    http_response_code(500); // Internal Server Error
+    echo "Login failed: " . $e->getMessage();
 }
-else
-{
-    if(isset($_GET['logout']))
-    {
-        session_destroy();
-        header('Location: ../views/loginform.php');
-    }
-}
-
-
-
-
-
-
-
-
-
 ?>
