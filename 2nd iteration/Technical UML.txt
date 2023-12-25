@@ -1,0 +1,97 @@
+@startuml
+
+class Database {
+  -connection: resource
+  -instance: Database  <<Singleton>>
+  +getInstance(): Database
+  +connect(): void
+  +disconnect(): void
+  +query(sql: string): array
+}
+
+class UserDAO {
+  -db: Database
+  +getUserById(userId: int): User
+  +getUserByUsername(username: string): User
+  +saveUser(user: User): void
+  +updateUser(user: User): void
+  +deleteUser(user: User): void
+}
+
+class ProductDAO {
+  -db: Database
+  +getProductById(productId: int): Product
+  +saveProduct(product: Product): void
+  +updateProduct(product: Product): void
+  +deleteProduct(product: Product): void
+}
+
+class User {
+  -userId: int
+  -username: string
+  -password: string
+  -email: string
+  -contactDetails: string
+  +createAccount(): void
+  +logIn(): void
+  +postAd(): void
+  +browseAds(): void
+  +deleteAd(): void
+  +editAd(): void
+}
+
+class Product {
+  -productId: int
+  -name: string
+  -description: string
+  -price: double
+  -category: Category
+  -images: blob
+  +viewDetails(): void
+}
+
+class Location {
+  -locationId: int
+  -name: string
+  +displayLocalProducts(): void
+}
+
+enum Category {
+  FruitsVegetables
+  Herbs
+  Dairy
+  Eggs
+  MeatPoultry
+  CoffeeTeaJuice
+  Snacks
+  CondimentsSauces
+  PreparedFoods
+  HomePersonalCare
+  PetSupplies
+  Oils
+  Other
+}
+
+class UserController {
+  -userDao: UserDAO
+  +registerUser(userData: array): void
+  +loginUser(username: string, password: string): void
+  +postAd(userId: int, productData: array): void
+  +deleteAd(userId: int, productId: int): void
+  +editAd(userId: int, productId: int, newData: array): void
+}
+
+class ProductController {
+  -productDao: ProductDAO
+  +viewProductDetails(productId: int): void
+}
+
+UserController --o UserDAO
+ProductController --o ProductDAO
+UserDAO --o Database
+ProductDAO --o Database
+Product --o Location
+Product --o User
+Product --o Category
+
+@enduml
