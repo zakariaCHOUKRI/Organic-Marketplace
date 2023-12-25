@@ -42,5 +42,12 @@ class LocationDAO {
         $stmt = $this->db->query("SELECT * FROM Location");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getLocationByName($name) {
+        $stmt = $this->db->prepare("SELECT * FROM Location WHERE name = :name");
+        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
 ?>
