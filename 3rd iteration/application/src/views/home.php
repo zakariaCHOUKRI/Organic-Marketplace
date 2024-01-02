@@ -64,19 +64,16 @@
 								<div class="block d-flex">
 									<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="search" id="search" placeholder="What are you looking for ?">
 									<select class="form-control mb-2 mr-sm-2 mb-sm-0" name="category">
-										<option selected disabled>Choose a category</option>
-										<option value="0">0</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
+										<option selected value="23102003">Choose a category</option>
+										<?php
+											include_once('../controllers/GetCategories.php');
+										?>
 									</select>
 									<select class="form-control mb-2 mr-sm-2 mb-sm-0" name="location">
-										<option selected value="0">All Morocco</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
+										<option selected value="23102003">All Morocco</option>
+										<?php
+											include_once('../controllers/GetLocations.php');
+										?>
 									</select>
 									<button class="btn btn-main">SEARCH</button>
 								</div>

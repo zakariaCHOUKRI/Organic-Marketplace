@@ -1,5 +1,28 @@
 <?php
 include_once("../controllers/redirect.php");
+include_once '../models/Database.php';
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+$db = Database::getInstance()->getConnection();
+
+// Get the productId from the URL
+$productId = isset($_GET['productId']) ? intval($_GET['productId']) : 0;
+
+// Retrieve the product information from the database
+$stmt = $db->prepare("SELECT * FROM Product WHERE productId = ?");
+$stmt->execute([$productId]);
+$product = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// Check if the product exists
+if (!$product) {
+    // Handle the case where the product is not found
+    // Redirect or show an error message
+    // Example: header("Location: error.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +33,7 @@ include_once("../controllers/redirect.php");
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Create ad</title>
+	<title>Edit Ad</title>
 	
 	<!-- PLUGINS CSS STYLE -->
 	<link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
@@ -47,20 +70,21 @@ include_once("../controllers/redirect.php");
 	<div class="container mt-5 create-ad-container">
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Create an Ad</h2>
-				<form action="../controllers/createAdController.php" method="POST">
+				<h2>Edit Ad</h2>
+				<form action="../controllers/editAdController.php" method="POST">
 					<!-- Product Information -->
+					<input type="hidden" name="productId" value="<?php echo $productId; ?>">
 					<div class="form-group">
 						<label for="name">Product Name:</label>
-						<input type="text" class="form-control" id="name" name="name" required>
+						<input type="text" class="form-control" id="name" name="name" value="<?php echo $product['name']; ?>" required>
 					</div>
 					<div class="form-group">
 						<label for="description">Product Description:</label>
-						<textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+						<textarea class="form-control" id="description" name="description" rows="3" required><?php echo $product['description']; ?></textarea>
 					</div>
 					<div class="form-group">
 						<label for="price">Price:</label>
-						<input type="text" class="form-control" id="price" name="price" required>
+						<input type="text" class="form-control" id="price" name="price" value="<?php echo $product['price']; ?>" required>
 					</div>
 					<div class="form-group">
 						<label for="category">Choose Category:</label>
@@ -72,7 +96,7 @@ include_once("../controllers/redirect.php");
 					</div>
 					<div class="form-group">
 						<label for="location">Choose Location:</label>
-						<select class="form-control" id="location" name="location" required>
+						<select class="form-control" id="location" name="locationId" required>
 							<?php
 								include_once('../controllers/GetLocations.php');
 							?>
@@ -80,9 +104,9 @@ include_once("../controllers/redirect.php");
 					</div>
 					<div class="form-group">
 						<label for="imageLinks">Image Links (comma-separated):</label>
-						<input type="text" class="form-control" id="imageLinks" name="imageLinks" required>
+						<input type="text" class="form-control" id="imageLinks" name="imageLinks" value="<?php echo isset($product['imageLinks']) ? $product['imageLinks'] : ''; ?>" required>
 					</div>
-					<button type="submit" class="btn btn-primary">Submit Ad</button>
+					<button type="submit" class="btn btn-primary">Save Changes</button>
 				</form>
 			</div>
 		</div>
@@ -109,7 +133,6 @@ include_once("../controllers/redirect.php");
 			$("#productCarousel").carousel();
 		});
 	</script>
-
 
 </body>
 

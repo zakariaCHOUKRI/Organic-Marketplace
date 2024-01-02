@@ -843,7 +843,6 @@ ul.pagination .active a {
 }
 
 .hero-area {
-  padding: 100px 0 0;
   height: calc( 100vh - 100px );
   display: flex;
   flex-direction: column;
@@ -862,7 +861,7 @@ select.form-control:not([size]):not([multiple]){
   padding-bottom: 80px;
 }
 
-.hero-area .advance-search {
+.advance-search {
   background: #fff;
   padding: 40px 30px;
   border-radius: 3px;
@@ -2514,6 +2513,24 @@ article.single-post p {
 
 .btn-primary:hover {
   background-color: #22be34;
+}
+
+.product-image {
+  width: 420px;
+  height: 275px;
+}
+
+.product-info-container {
+  background-color: #fff; /* White background */
+  border-radius: 15px;   /* Border radius for rounded corners */
+  padding: 20px;         /* Add padding for spacing */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
+}
+
+.create-ad-container {
+  background-color: #fff; /* Set your desired background color */
+  padding: 20px; /* Add padding if needed */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
 }
 
 /*# sourceMappingURL=maps/style.css.map */

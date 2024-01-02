@@ -49,5 +49,15 @@ class LocationDAO {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function getAllCities() {
+        $query = "SELECT * FROM Location ORDER BY name";
+        $statement = $this->db->prepare($query);
+        $statement->execute();
+
+        $cities = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        return $cities;
+    }
 }
 ?>

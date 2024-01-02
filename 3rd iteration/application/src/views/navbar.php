@@ -68,7 +68,7 @@
 								?>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link add-button" href="#"><i class="fa fa-plus-circle"></i> Post an ad</a>
+								<a class="nav-link add-button" href="./createad.php"><i class="fa fa-plus-circle"></i> Post an ad</a>
 							</li>
 						</ul>
 					</div>

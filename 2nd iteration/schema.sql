@@ -16,7 +16,7 @@ CREATE TABLE User (
 );
 
 CREATE TABLE Product (
-  productId INT PRIMARY KEY,
+  productId INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
   description VARCHAR(255),
   price DOUBLE,
@@ -30,4 +30,11 @@ CREATE TABLE Product (
 CREATE TABLE Location (
   locationId INT PRIMARY KEY,
   name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE ProductImages (
+    imageId INT PRIMARY KEY AUTO_INCREMENT,
+    productId INT,
+    imageUrl VARCHAR(255),
+    FOREIGN KEY (productId) REFERENCES Product(productId)
 );

@@ -1,5 +1,7 @@
 <?php
 
+include_once 'Database.php';
+
 class ProductDAO {
     private $db;
 
@@ -63,6 +65,26 @@ class ProductDAO {
         $stmt->bindParam(':category', $category);
         $stmt->bindParam(':locationId', $locationId);
         $stmt->execute();
+    }
+
+    function getProductInfoById($productId) {
+        // Assuming you have a PDO connection in $db
+        $query = "SELECT * FROM products WHERE productId = :productId";
+        $stmt = $this->$db->prepare($query);
+        $stmt->bindValue(':productId', $productId, PDO::PARAM_INT);
+        $stmt->execute();
+        
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    function getProductImagesById($productId) {
+        // Assuming you have a PDO connection in $db
+        $query = "SELECT * FROM product_images WHERE productId = :productId";
+        $stmt = $this->$db->prepare($query);
+        $stmt->bindValue(':productId', $productId, PDO::PARAM_INT);
+        $stmt->execute();
+        
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 

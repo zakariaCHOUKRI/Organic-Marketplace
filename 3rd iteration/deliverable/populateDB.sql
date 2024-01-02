@@ -1,159 +1,108 @@
 USE OrganicMarketplace;
 
-INSERT INTO `Location` (`locationId`, `name`) VALUES (0, 'animi');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (1, 'laboriosam');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (2, 'quod');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (3, 'molestiae');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (5, 'consectetur');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (9, 'quae');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (30, 'dicta');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (31, 'ratione');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (32, 'sequi');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (34, 'doloribus');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (36, 'et');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (38, 'sed');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (40, 'et');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (42, 'iste');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (50, 'dolore');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (53, 'quas');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (57, 'corporis');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (65, 'sequi');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (76, 'neque');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (87, 'placeat');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (89, 'qui');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (92, 'soluta');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (95, 'officiis');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (100, 'amet');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (567, 'tempora');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (3528, 'quasi');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (27911, 'dicta');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (65325, 'quas');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (95675, 'velit');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (615226, 'accusamus');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (779011, 'voluptas');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (979821, 'enim');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (1184530, 'non');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (9489391, 'ut');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (189687688, 'facere');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (303728845, 'eos');
-INSERT INTO `Location` (`locationId`, `name`) VALUES (959082148, 'nemo');
+INSERT INTO Location (locationId, name) VALUES
+(0, 'Agadir'),
+(1, 'Ait Melloul'),
+(2, 'Al Hoceima'),
+(3, 'Azemmour'),
+(4, 'Benguerir'),
+(5, 'Beni Mellal'),
+(6, 'Berrechid'),
+(7, 'Boujdour'),
+(8, 'Casablanca'),
+(9, 'Chefchaouen'),
+(10, 'Dakhla'),
+(11, 'Dcheira'),
+(12, 'El Jadida'),
+(13, 'Errachidia'),
+(14, 'Essaouira'),
+(15, 'Fes'),
+(16, 'Fkih Ben Salah'),
+(17, 'Figuig'),
+(18, 'Guelmim'),
+(19, 'Guelmim Province'),
+(20, 'Ifrane'),
+(21, 'Jerada'),
+(22, 'Kenitra'),
+(23, 'Khemisset'),
+(24, 'Khenifra'),
+(25, 'Khouribga'),
+(26, 'Laayoune'),
+(27, 'Larache'),
+(28, 'Lixus'),
+(29, 'Marrakech'),
+(30, 'Meknes'),
+(31, 'Moulay Idriss Zerhoun'),
+(32, 'Nador'),
+(33, 'Ouarzazate'),
+(34, 'Oujda'),
+(35, 'Rabat'),
+(36, 'Safi'),
+(37, 'Sale'),
+(38, 'Settat'),
+(39, 'Sidi Ifni'),
+(40, 'Sidi Kacem'),
+(41, 'Sidi Slimane'),
+(42, 'Skhirat'),
+(43, 'Tangier'),
+(44, 'Tan-Tan'),
+(45, 'Taroudant'),
+(46, 'Taza'),
+(47, 'Tetouan'),
+(48, 'Tiznit'),
+(49, 'Tiznit Province'),
+(50, 'Zagora');
 
-INSERT INTO `Product` (`productId`, `name`, `description`, `price`, `category`, `userId`, `locationId`) VALUES (1, 'et', 'Vero quibusdam temporibus temporibus minima illum. Ut rerum quia iure earum nostrum. Enim provident dolores molestiae enim consequuntur sed.', '34.621', 'eligendi', 17, 1);
-INSERT INTO `Product` (`productId`, `name`, `description`, `price`, `category`, `userId`, `locationId`) VALUES (5, 'est', 'Repudiandae quis sapiente aliquam sint. Rerum non illum voluptatibus velit quis suscipit. Est quia voluptate sit occaecati placeat beatae in.', '32.426', 'hic', 6, 3);
-INSERT INTO `Product` (`productId`, `name`, `description`, `price`, `category`, `userId`, `locationId`) VALUES (22, 'numquam', 'Non nihil eum doloribus hic omnis. Cupiditate eius quos ad beatae ab. Eum dignissimos vel nam quidem aspernatur et et. Ea praesentium sit enim molestias.', '11280.79677', 'delectus', 9, 5);
-INSERT INTO `Product` (`productId`, `name`, `description`, `price`, `category`, `userId`, `locationId`) VALUES (33, 'consectetur', 'Officiis harum consequatur enim error. Aut et sunt qui quas. Labore sint nulla occaecati reprehenderit porro debitis. Assumenda et assumenda quos necessitatibus nostrum magni.', '20178', 'officia', 25, 3);
-INSERT INTO `Product` (`productId`, `name`, `description`, `price`, `category`, `userId`, `locationId`) VALUES (42, 'perferendis', 'Ullam iure voluptate voluptas dolore dolores error quia. Quia harum est harum ut quisquam sit et. Exercitationem quisquam magnam ea quo velit minima nam.', '2982.9079', 'quia', 86, 5);
-INSERT INTO `Product` (`productId`, `name`, `description`, `price`, `category`, `userId`, `locationId`) VALUES (44, 'sequi', 'Maxime est a ipsum. Sint rerum quas iusto unde alias iusto explicabo.', '0', 'ut', 53, 2);
-INSERT INTO `Product` (`productId`, `name`, `description`, `price`, `category`, `userId`, `locationId`) VALUES (48, 'eum', 'Sed dignissimos qui nesciunt. Reiciendis sunt quaerat animi laudantium quibusdam voluptatibus ipsam. Blanditiis omnis veniam dolor mollitia asperiores accusamus. Vel suscipit harum tempora quia.', '76', 'aliquam', 56, 1);
-INSERT INTO `Product` (`productId`, `name`, `description`, `price`, `category`, `userId`, `locationId`) VALUES (50, 'consequatur', 'Iste quia voluptatem vel et ullam id pariatur. Numquam voluptatibus et perferendis. Sit quas est mollitia minima iusto repellat occaecati. Odit est est nulla non necessitatibus. Quia adipisci omnis et inventore eum et.', '23606.638793069', 'quos', 71, 5);
-INSERT INTO `Product` (`productId`, `name`, `description`, `price`, `category`, `userId`, `locationId`) VALUES (60, 'doloribus', 'Quo qui veniam natus dolorem placeat voluptatem. Qui error sed veritatis harum. Laudantium iure velit molestiae distinctio sint consequuntur omnis. Eius recusandae sunt impedit sint ea.', '21059.1356654', 'nam', 70, 9);
-INSERT INTO `Product` (`productId`, `name`, `description`, `price`, `category`, `userId`, `locationId`) VALUES (65, 'rem', 'Voluptatem fuga vel error qui ullam. Delectus adipisci dolores excepturi eaque eos totam labore. Aut nesciunt deserunt nisi modi laboriosam.', '1252.267493784', 'perferendis', 5, 3);
-INSERT INTO `Product` (`productId`, `name`, `description`, `price`, `category`, `userId`, `locationId`) VALUES (77, 'culpa', 'Eius laudantium velit ipsum asperiores qui. Est numquam doloremque adipisci pariatur.', '11.798027', 'dolorem', 9, 5);
-INSERT INTO `Product` (`productId`, `name`, `description`, `price`, `category`, `userId`, `locationId`) VALUES (79, 'quo', 'Itaque modi ipsam rerum. Assumenda architecto esse quia corrupti ut nesciunt repudiandae. Odio et dicta incidunt explicabo iste est.', '431.48', 'rerum', 4, 3);
-INSERT INTO `Product` (`productId`, `name`, `description`, `price`, `category`, `userId`, `locationId`) VALUES (82, 'sed', 'Quod voluptate minus ipsam sint soluta rerum dignissimos voluptas. Qui quia totam et explicabo culpa. Totam officia nulla eos occaecati qui.', '213.98178', 'consequatur', 5, 5);
-INSERT INTO `Product` (`productId`, `name`, `description`, `price`, `category`, `userId`, `locationId`) VALUES (85, 'ea', 'Quos adipisci voluptas voluptatem sunt fuga voluptates quis. Voluptas distinctio nam non. Repellendus pariatur molestiae tempora ducimus laudantium delectus. Velit odit voluptatem ipsa explicabo. Corrupti adipisci earum quae repellat vitae voluptatem aper', '645674317.725', 'officiis', 83, 2);
-INSERT INTO `Product` (`productId`, `name`, `description`, `price`, `category`, `userId`, `locationId`) VALUES (90, 'id', 'Vel laboriosam fuga aut perspiciatis sapiente. Architecto asperiores sed sit excepturi. Repellat asperiores est dignissimos veritatis vel. Explicabo et dignissimos qui veritatis aperiam facilis minima.', '486671.589977', 'quidem', 57, 1);
-INSERT INTO `Product` (`productId`, `name`, `description`, `price`, `category`, `userId`, `locationId`) VALUES (97, 'omnis', 'Nihil qui corrupti vel culpa. Iure qui provident voluptatem iusto sequi. Aliquam sed dolorum error autem ipsum qui. Et voluptatem vel sit quaerat est aliquid fugiat omnis.', '0', 'facilis', 65, 5);
-
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (1, 'grady.nestor', '01dcf70ee675d0fe81ab6bac5f62d0bcc0697833', 'douglas.geovanni@example.org', '802-915-4589x17872');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (2, 'cristopher.oberbrunn', '5591741c9a5bb99b0484230ff3fb60d56c18414f', 'kshlerin.bridgette@example.com', '100.775.2707x402');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (3, 'vernon.wyman', '2402a2bb75d404305a72282dab510ec35a7b2627', 'smcclure@example.org', '1-362-840-2110x13645');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (4, 'kuphal.edward', 'a52dbea19b2ddf371748a4dcb531618cc2b495da', 'wbarrows@example.net', '917-342-8427x55881');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (5, 'adelle02', '6089ba59564df7fab9495e14da12d101ec6e6ec6', 'haley.roderick@example.net', '879-824-7757');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (6, 'nienow.kyleigh', '8347da858e26930fa671cfa0a7fd10820d08544c', 'qschuppe@example.com', '793.613.5933');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (7, 'brooke43', 'f740bd6eab1ce9c68235d1bcc98508c92601b749', 'oma83@example.org', '1-129-257-1488');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (8, 'scotty.lakin', 'ffa9253d070ce32f9f6561696a72f6df14df135f', 'maudie.witting@example.com', '1-578-939-2680x746');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (9, 'willms.felton', 'fc150577627fbb7a6e164ad5b7f670a87870d543', 'gaetano.streich@example.com', '1-597-176-4209x962');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (10, 'brekke.randi', '8017fec0ca8ce59bf6974ada79c95167fcde6f21', 'ntillman@example.net', '668.586.8696');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (11, 'afranecki', '238a711bea351c38d28b67fdb9fe0e068c101ebc', 'ole56@example.net', '1-415-803-6031x25303');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (12, 'ernser.justine', '8adad6ea5c13e354220ad724d60034ee320dc987', 'susan.kertzmann@example.net', '1-357-790-5585');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (13, 'stephany44', '9fba4780ca1b823b562024889fb14e47ae909289', 'eunice01@example.net', '1-023-892-4392');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (14, 'kristy.emard', '59d20a96e8880000254736ea0c08e9367be2310e', 'ervin58@example.net', '(062)675-2163');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (15, 'bennett.durgan', '70555fcef965e1b53d30fd5a6a074904281a3f35', 'schamberger.hadley@example.org', '180-493-5974x0788');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (16, 'sadye.bergnaum', '97b367f142d388328933341b827eb80ebd767054', 'daryl15@example.org', '(337)053-5296x6241');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (17, 'paucek.alford', '6e9f3289c387125f626bb0ea61d7392e76a329fb', 'gtorphy@example.org', '02558719014');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (18, 'white.rodrigo', '5d264be1ef3dfe041a5bf17b9733656d95311150', 'jmann@example.org', '1-349-610-6858');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (19, 'ggoldner', 'd9e40c68d83dad23a050dc76ae608241bc61812b', 'nicholaus.sawayn@example.org', '1-713-085-2715x64337');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (20, 'walsh.darian', 'f1ff7b4d1455b72ed1ef56e4924192e912013067', 'farrell.lauren@example.com', '253-446-6815');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (21, 'annabell30', '0a75079afd433b99b659b5543876edac03911fef', 'utoy@example.com', '08933675281');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (22, 'schowalter.christy', 'c8612d7cb92074ce264ef523757c16ad282c4725', 'wcasper@example.net', '301.544.6561x323');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (23, 'demetris.murphy', 'd0482f938dd1fe5f45ccb710cd0b151caf407f06', 'ydavis@example.com', '+45(5)2371739145');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (24, 'aric.marks', '5f6829bdbdfcbb5055d294b1ab8a34f1608eab20', 'ferry.christelle@example.com', '(140)060-7888x8025');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (25, 'kian84', 'ec4febf2f021c337512e78d167e0efa44d0134c3', 'ricardo38@example.com', '1-084-521-9933x285');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (26, 'frami.eldora', '5014377eff3f816fbfefed7d93cee79923e40232', 'nigel.abbott@example.net', '979.672.1956');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (27, 'xander26', '7aeea5c9b669c9ad9ac0440358c16ba8f4ef6ba8', 'adams.adrian@example.com', '447.841.3870x854');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (28, 'wuckert.abbie', '4c5d3968a6f0365079083615dc50f6977d4e014f', 'dlueilwitz@example.com', '108.820.8377x865');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (29, 'ryann70', 'e34464dd719b9de3c10d97a38ac4f0ecf1bc9a96', 'norma31@example.org', '03758411608');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (30, 'kautzer.michele', '6c948b9f1e9046135c88a5ab36fbaa6dd93979b4', 'wheathcote@example.net', '03238805615');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (31, 'concepcion97', '6e4d4dd5568d428bf8659483b1a5222274d72a99', 'jquitzon@example.com', '634.401.9733x54173');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (32, 'lucile.runolfsson', '83500e457bf992bef4458aca3d391a6548136b85', 'lueilwitz.beryl@example.org', '1-908-023-6808');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (33, 'raymundo90', '83077f3116b49d3393c68144d0d4a1c6dbaa4154', 'elinore.gulgowski@example.net', '619.664.6535x491');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (34, 'erdman.garland', 'c19ff517f2bb3d6c2929e8ac9f61873abddd1573', 'pietro94@example.org', '1-332-144-8224');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (35, 'pattie98', '4a9fc4843022ab33e0abef5fb0e30b4dc03acfde', 'weber.barrett@example.org', '07495678887');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (36, 'germaine00', 'cf9b24438c0df65863b17414ad16a64d577aabc7', 'giles.wintheiser@example.net', '(016)376-1698');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (37, 'nschamberger', 'c6f6e7cea9d8e319499d594936c7f3737f24b00e', 'zeffertz@example.net', '650.611.6036x75337');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (38, 'williamson.salma', 'e6cfcf0205c4533159a9ac6d6226cf91d9cbf70f', 'mcglynn.lucie@example.com', '03805450309');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (39, 'craig.glover', '8c63f6f6b4cc5937d3a693f690c17fde3f0c4382', 'zgottlieb@example.net', '728-734-8570');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (40, 'klein.stone', 'cd04b2a3071a0bec2022eaae48d0a04c480dcbf4', 'cassandra03@example.net', '1-335-476-8884x8637');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (41, 'coleman.skiles', '734d37497d965d49842d5f0c1947727912e3b227', 'stacey.hintz@example.net', '09378056095');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (42, 'lehner.korbin', '04be4abb789016ace0245f44fa755bc14bb2a462', 'vandervort.maureen@example.net', '1-463-599-9914');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (43, 'cassin.susan', '2a5b71831d303ad1e56261aed67d7cb00b54388f', 'icummings@example.com', '282-413-7216x854');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (44, 'wschuppe', 'f21dc2e669f5cef22865ffa45656f352668bbc60', 'nasir.prosacco@example.org', '(482)399-9268x6143');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (45, 'laron86', 'd703ba8bff6a06072b18c85c194187c699fc2c9d', 'harris.troy@example.net', '234.115.5157');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (46, 'kiera87', '5b2391bf032d0f55e9a852d1f50cd1921fb2f322', 'emory.hansen@example.net', '1-837-618-5431x8842');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (47, 'plueilwitz', '248ff6c38b1e87fd705fa54aad21b88376023919', 'corkery.harmony@example.org', '355-323-4924x6534');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (48, 'kgoyette', 'd7b103227049e70703ccc8207a8e36ac71bae117', 'kaley.mayert@example.net', '1-697-182-4327x01340');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (49, 'maxie.turner', 'bfe7969786cb637051a7b1b3f3b8de212fafccb0', 'qheller@example.net', '1-156-540-9573x0662');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (50, 'runte.raul', 'f8df485968c993dfb6b72fd1142fc7c35b413014', 'elroy82@example.net', '628-674-7108x930');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (51, 'godfrey.grant', '01e6087f5ba63d8fd29722406fe444440e962fcf', 'bradford.roberts@example.org', '(716)304-3487x76240');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (52, 'wiegand.merritt', '7b65d0c55f0c7287e732913f9ebd7e55d3bb2727', 'terrill.walker@example.org', '230-453-4157x455');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (53, 'oberbrunner.marcelin', 'a41add02da599371ee98f6e01dd759dd826c7c7d', 'jspencer@example.net', '518-279-9791x6903');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (54, 'mohammed.mueller', 'fd3496921c01c0b17901a934e3d0a40d7424ca5c', 'abbey.boehm@example.org', '317-397-7442');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (55, 'quitzon.earline', '5bda674274bd674292914880558743a1a22f3015', 'slesch@example.org', '275.693.5189');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (56, 'josefina.hartmann', '53e9b2093d6d9f3f1539b7df4687144fa2b8c7ab', 'karolann91@example.org', '555.465.4969x18816');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (57, 'earline.hackett', '3ae91412dcb2d65826912a918c17ed822dece479', 'madison89@example.net', '001-601-9478');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (58, 'hills.evelyn', '771e4a67af45d595de490cf25f4abf0d58ad509d', 'borer.cali@example.net', '(128)602-2283x7641');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (59, 'oaltenwerth', '002c71396db14cb168b2c4ca580d5d7783716e1d', 'velda.mcglynn@example.net', '(044)457-8105x947');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (60, 'langworth.elinore', 'e6d820c63e49ef07d27da807221e0b142df9150b', 'royce98@example.com', '03035579391');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (61, 'freeman.willms', '134bc7093d05ac9ce0d115981a7f624be1f53af0', 'albina.fritsch@example.net', '392.456.2059');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (62, 'ethelyn65', '9e5f87cad8bbbb5c73d86449945aa694ad7095b9', 'kelton.botsford@example.com', '01863329775');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (63, 'winifred62', 'b163103a0e21c9f51109e7ae8c9a449c56138157', 'dlubowitz@example.com', '456-282-1360');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (64, 'njast', 'ace9432a72cb084ada314bd13cfbde742a8039b8', 'zeichmann@example.org', '357.746.0139x2425');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (65, 'sgoyette', 'e5f06b4053e2ee900693281c10cadfe7d85f3d22', 'minerva.hoppe@example.org', '370.117.4479');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (66, 'bjohnson', '17e844a1d2b04f4d03cacf9726565d486b3bdf4e', 'schuyler53@example.org', '113.659.0590x4040');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (67, 'ujones', 'f1574551cd9f9c82d23715581b8693cd538d9b26', 'ryann26@example.net', '313-488-1866');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (68, 'grimes.howard', 'f75a7cc5e6b57172d3735ffbbe96c21262f26dd7', 'estelle77@example.net', '646.257.1896x8127');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (69, 'ldenesik', '5a4436702bd99e4b50f178b3bb3971163170e54a', 'moore.wilhelm@example.com', '+20(6)5038875278');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (70, 'richmond66', 'b4a6fc26b0523569fdf2c1bd7543c8a106481197', 'erdman.mable@example.com', '(109)662-0872x87752');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (71, 'little.harley', '187aeab01c634e653ba30395bf3158a3922365cb', 'rosina.o\'kon@example.org', '1-341-132-3464x23890');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (72, 'amurphy', '19dbdd2fea8adf65f0466b8817b04c9a31e1e6e1', 'madonna75@example.org', '06609488328');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (73, 'gail86', '1db956f0c993260ba777804220e9428c275af2f8', 'arnulfo55@example.org', '(902)794-3436');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (74, 'kreiger.judy', 'f30a07bb7becec544e64d2f23fc0ff2beb4a6fb3', 'hintz.nels@example.org', '(482)060-2978');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (75, 'gerhold.santina', 'a6ab156f4f445aee0f778843ee2b8d040c33870f', 'xcarroll@example.org', '1-555-104-6745x3690');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (76, 'danika.kling', '1e58209f0828c5739cab8460eb05d36aea7e9457', 'chanelle.lockman@example.net', '617-763-1764x4889');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (77, 'lhettinger', '6fd04761f7e195ff68f179729097a23e7c6eef6d', 'wisozk.trace@example.com', '01385516833');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (78, 'jarrett84', 'b0ffffef3d4863caa72b692587a956dae6860f5d', 'otho72@example.org', '802-646-4596x1223');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (79, 'dax.strosin', 'd82bf18384f1ea3a42f20fff6fd9694ae1cddd20', 'dibbert.barry@example.net', '582-336-2986x3977');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (80, 'hal.schroeder', '88f5e9e50b57cacc64a199e847ef3db426db2550', 'kirlin.yessenia@example.com', '+52(5)6368335535');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (81, 'jkautzer', 'fb91528c32b45cdf720baab43c4ad9619ec1ad4d', 'agnes79@example.net', '1-126-281-5955x93348');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (82, 'stoltenberg.devonte', '4de059c98675d3ef8ff08d94f04d204cf5d5ece7', 'lind.quincy@example.com', '516.788.2276');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (83, 'landen.wyman', '1df144c1d6418e3ee20b3012f14b3cf91128379f', 'yfarrell@example.net', '+39(1)5817953935');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (84, 'julius.robel', '5ea1c9e3e35e5131f869d20621919d5f79351fd3', 'mthompson@example.com', '823.157.6317');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (85, 'vwehner', 'c5ef3267c389c557165dd5711843fee2a3def3b7', 'colten40@example.com', '(914)479-5538');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (86, 'jacobs.clarissa', '40ef2501280f8a0bee3089f0c8b97aefe422a98b', 'vernon.kihn@example.org', '1-994-593-2402x5863');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (87, 'hallie52', 'e05c7e009dc64f60d5298003f97a576d36c68f64', 'werdman@example.com', '1-768-172-2916x8095');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (88, 'bernhard54', '04df07aa15bbf9287790ecbaf8c0d101ed5f9d4d', 'osinski.richard@example.com', '+54(2)3475687308');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (89, 'grimes.amparo', 'dde07011ed6d101bde2f3816a3fbf0df9ead9fd1', 'ruben42@example.com', '539.702.7983x294');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (90, 'tiana.marvin', 'f851170b114d94a32951fb0df26050bebed2ed4e', 'lhaag@example.com', '755-761-9123x34857');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (91, 'nschmeler', '1720e56eb5fe350dd31255e7bb000487e41a61e6', 'joseph.lockman@example.net', '966-509-4500x7729');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (92, 'mikel06', '20e5d4a734bf149b7b70df76620c98a0f34b520b', 'rschuppe@example.org', '1-471-632-4518x8491');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (93, 'parker.willy', 'd843c66af0b3a3e9de122f05bffa7c95e7feb3d0', 'elwyn.lesch@example.org', '838-768-3174x2905');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (94, 'ferne96', '2621475af14f4d8c94d12a668336dd42114307d3', 'reinhold.roberts@example.com', '(898)978-6420x95490');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (95, 'qdickinson', 'ad57febd45c4eb9d63652544fd8ac13bc8164859', 'ahmed.glover@example.net', '855.408.7356x3221');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (96, 'jrobel', '90f4e90d00cea275cca8180b3cda76f157b91fb8', 'qaltenwerth@example.com', '608.058.5518');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (97, 'tony63', '612618f76ea8d4763a456bd3df030052b5bf0ab4', 'fbogisich@example.net', '02607605079');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (98, 'major.dickens', 'fe2368825db75a427169843678f980aee18a4065', 'florine.gutmann@example.org', '450.667.6784x22015');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (99, 'dharvey', '38b1898b32e18490f6ccb6a3e1a68d778356f1ec', 'ellen.mante@example.org', '468.674.0636');
-INSERT INTO `User` (`userId`, `username`, `password`, `email`, `contactDetails`) VALUES (100, 'eve.franecki', '6d6a9b41abf6b365488336933c200ba855889577', 'kolby56@example.com', '1-335-394-7783x515');
+INSERT INTO Product (name, description, price, category, userId, locationId) VALUES
+('Fresh Vegetables', 'The freshest vegetables you can find', 19.99, 'Fruits/Vegetables', 1, 11),
+('Organic Juice', 'Very healthy juice made with love', 29.99, 'Coffee/Tea/Juice', 1, 4),
+('Healthy Moroccan Food', 'Very healthy moroccan dishes', 39.99, 'Prepared Foods', 1, 1),
+('Good Vegetables', 'The finest vegetables in Morocco', 49.99, 'Fruits/Vegetables', 2, 4),
+('Fresh Juice', 'The freshest juice', 59.99, 'Coffee/Tea/Juice', 2, 11),
+('Delicious Moroccan Food', 'Youll never taste better food !', 69.99, 'Prepared Foods', 2, 4),
+('Best Vegetables', 'The Best vegetables you can find', 79.99, 'Fruits/Vegetables', 2, 11),
+('Best Juice', 'Our juice is the best ever', 89.99, 'Coffee/Tea/Juice', 3, 4),
+('Best Moroccan Food', 'The best Moroccan meals', 99.99, 'Prepared Foods', 3, 11),
+('Healthy Vegetables', 'The healthiest vegetables you can find', 109.99, 'Fruits/Vegetables', 4, 4);
 
 
+INSERT INTO ProductImages (productId, imageUrl) VALUES
+(1, 'https://farmfreshontario.com/wp-content/uploads/2019/12/p3-100x100.jpg'),
+(1, 'https://www.harighotra.co.uk/images/Shutterstock/Potatoes_560x560.jpg'),
+(1, 'https://bcfresh.ca/wp-content/uploads/2021/11/Carrots.jpg'),
+(4, 'https://farmfreshontario.com/wp-content/uploads/2019/12/p3-100x100.jpg'),
+(4, 'https://bcfresh.ca/wp-content/uploads/2021/11/Carrots.jpg'),
+(4, 'https://www.harighotra.co.uk/images/Shutterstock/Potatoes_560x560.jpg'),
+(7, 'https://www.harighotra.co.uk/images/Shutterstock/Potatoes_560x560.jpg'),
+(7, 'https://farmfreshontario.com/wp-content/uploads/2019/12/p3-100x100.jpg'),
+(7, 'https://bcfresh.ca/wp-content/uploads/2021/11/Carrots.jpg'),
+(10, 'https://bcfresh.ca/wp-content/uploads/2021/11/Carrots.jpg'),
+(10, 'https://www.harighotra.co.uk/images/Shutterstock/Potatoes_560x560.jpg'),
+(10, 'https://farmfreshontario.com/wp-content/uploads/2019/12/p3-100x100.jpg');
+
+
+-- Insert image URLs for products with Prepared Foods category
+INSERT INTO ProductImages (productId, imageUrl) VALUES
+(3, 'https://img.cuisineaz.com/660x660/2017/01/04/i115189-tajine-de-viande-pommes-de-terre-carotte-et-epices.jpeg'),
+(3, 'https://p6.storage.canalblog.com/61/63/720124/102852684_o.jpg'),
+(6, 'https://p6.storage.canalblog.com/61/63/720124/102852684_o.jpg'),
+(6, 'https://img.cuisineaz.com/660x660/2017/01/04/i115189-tajine-de-viande-pommes-de-terre-carotte-et-epices.jpeg'),
+(9, 'https://img.cuisineaz.com/660x660/2017/01/04/i115189-tajine-de-viande-pommes-de-terre-carotte-et-epices.jpeg'),
+(9, 'https://p6.storage.canalblog.com/61/63/720124/102852684_o.jpg');
+
+-- Insert image URLs for products with Coffee/Tea/Juice category
+INSERT INTO ProductImages (productId, imageUrl) VALUES
+(2, 'https://www.allrecipes.com/thmb/qXBaEIkAqDpDWqAVJbPZs9TxcZw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4513616-d1b91430eaab44e49230b21d22b88ba2.jpg'),
+(2, 'https://i.pinimg.com/564x/54/66/dc/5466dc8aeaf3631f9ff968b9209f479f.jpg'),
+(5, 'https://i.pinimg.com/564x/54/66/dc/5466dc8aeaf3631f9ff968b9209f479f.jpg'),
+(5, 'https://www.allrecipes.com/thmb/qXBaEIkAqDpDWqAVJbPZs9TxcZw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4513616-d1b91430eaab44e49230b21d22b88ba2.jpg'),
+(8, 'https://i.pinimg.com/564x/54/66/dc/5466dc8aeaf3631f9ff968b9209f479f.jpg'),
+(8, 'https://www.allrecipes.com/thmb/qXBaEIkAqDpDWqAVJbPZs9TxcZw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4513616-d1b91430eaab44e49230b21d22b88ba2.jpg');
+
+INSERT INTO User (username, password, email, contactDetails) VALUES
+('Zakaria Choukri', '$2y$10$XQ4Bberv1LvJeUKSBAs1gu21ZWIo9RkaKgFpE0Szh3Py9pxiuUC5a', 'a@a.com', '0655695916'),
+('Ayman Youss', '$2y$10$JVRaM4BBtpzoK2MfKogeg.AFkT3/kN9xiIMXxKKNA5QuiNzwSK5Ru', 'b@b.com', '0697745310'),
+('Maha Hanif', '$2y$10$3OyosoMe9QircmmrnNxUGOkXc8Slnvr0nHcSrwzTe8cp6.oThi5OC', 'c@c.com', '0777794961'),
+('d', '$2y$10$9kfnBtG4MkRsWxIdESYBlOyuswLOzFykFU67s1uM6WzOqBAXfF5D.', 'd@d.com', 'd'),
+('e', '$2y$10$RaDQ5fBZhxsD/ZU.x9NTgO/XLW7cODqcjs3pNBZInZRY5XYLXOuNC', 'e@e.com', 'e'),
+('f', '$2y$10$ON/pTEqJsySveKakrTkfguRcrUJmolkPhMMZf09QAgaIWCZ1kuTny', 'f@f.com', 'f');

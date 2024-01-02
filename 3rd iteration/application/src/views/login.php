@@ -4,7 +4,7 @@
     }
     
     if (isset($_SESSION["username"])) {
-        include_once '../controllers/redirect.php';
+        header('Location: ../views/home.php');
     }
 ?>
 
