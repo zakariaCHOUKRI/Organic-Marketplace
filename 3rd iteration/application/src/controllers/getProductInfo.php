@@ -5,6 +5,7 @@ if (!isset($_SESSION)) {
 }
 
 include_once '../models/Database.php';
+include_once '../models/ProductDAO.php';
 
 
 $db = Database::getInstance()->getConnection();
@@ -16,23 +17,10 @@ if (!isset($_GET['productId'])) {
 
 $productId = $_GET['productId'];
 
-// Query to fetch product information
-$productQuery = "SELECT p.*, u.contactDetails 
-				 FROM Product p
-				 JOIN User u ON p.userId = u.userId
-				 WHERE p.productId = :productId";
+$product = new ProductDAO();
 
-$productStmt = $db->prepare($productQuery);
-$productStmt->bindValue(':productId', $productId, PDO::PARAM_INT);
-$productStmt->execute();
-$productInfo = $productStmt->fetch(PDO::FETCH_ASSOC);
-
-// Query to fetch product images
-$imagesQuery = "SELECT * FROM ProductImages WHERE productId = :productId";
-$imagesStmt = $db->prepare($imagesQuery);
-$imagesStmt->bindValue(':productId', $productId, PDO::PARAM_INT);
-$imagesStmt->execute();
-$productImages = $imagesStmt->fetchAll(PDO::FETCH_ASSOC);
+$productInfo = $product->fetchProductInformation($productId);
+$productImages = $product->getProductImagesById($productId);
 ?>
 
 <div class="row d-flex flex-column">

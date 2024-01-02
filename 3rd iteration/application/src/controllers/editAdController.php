@@ -4,8 +4,11 @@ if (!isset($_SESSION)) {
 }
 
 include_once '../models/Database.php';
+include_once '../models/UserDAO.php';
+include_once '../models/ProductDAO.php';
 
-$db = Database::getInstance()->getConnection();
+$us = new UserDAO();
+$prod = new ProductDAO();
 
 // Retrieve form data
 $name = isset($_POST['name']) ? $_POST['name'] : '';
@@ -22,47 +25,16 @@ $imageLinksArray = explode(',', $imageLinks);
 // Retrieve the userId from the session based on the username
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
-} else {
-    // Handle the case where the user is not logged in
-    // Redirect or show an error message
-    // Example: header("Location: login.php");
-    exit();
 }
 
-// Retrieve the userId from the User table based on the username
-$stmt = $db->prepare("SELECT userId FROM User WHERE username = ?");
-$stmt->execute([$username]);
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-if (!$user) {
-    // Handle the case where the user is not found
-    // Redirect or show an error message
-    // Example: header("Location: login.php");
-    exit();
-}
-
+$user = $us->getUserObject($username);
 $userId = $user['userId'];
 
-// Update data in the database
 try {
-    // Update the Product table
-    $stmt = $db->prepare("UPDATE Product SET name = ?, description = ?, price = ?, category = ?, userId = ?, locationId = ? WHERE productId = ?");
-    $stmt->execute([$name, $description, $price, $category, $userId, $locationId, $productId]);
+    $prod->updateProductTable($name, $description, $price, $category, $userId, $locationId, $productId);
+    $prod->deleteExistingImages($productId);
+    $prod->insertNewImages($imageLinksArray, $productId);
 
-    // Delete existing records in the ProductImages table for the product
-    $stmt = $db->prepare("DELETE FROM ProductImages WHERE productId = ?");
-    $stmt->execute([$productId]);
-
-    // Insert new records into the ProductImages table
-    $stmt = $db->prepare("INSERT INTO ProductImages (productId, imageUrl) VALUES (?, ?)");
-    foreach ($imageLinksArray as $imageLink) {
-        $stmt->execute([$productId, $imageLink]);
-    }
-
-    // Close the database connection
-    $db = null;
-
-    // Redirect to a success page or do further processing
     header("Location: ../views/home.php");
     exit();
 } catch (PDOException $e) {

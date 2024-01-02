@@ -57,7 +57,31 @@ class UserDAO {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // Additional methods can be implemented as per your requirements
+    public function getContactDetails($username) {
+
+        $querycontactDetails = "SELECT contactDetails FROM User WHERE username = :username";
+        $stmtcontactDetails = $this->db->prepare($querycontactDetails);
+        $stmtcontactDetails->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmtcontactDetails->execute();
+
+        return $stmtcontactDetails->fetchColumn();
+
+    }
+
+    public function getIdFromUsername($username) {
+        // Fetch the user's ID based on the username
+        $queryUserId = "SELECT userId FROM User WHERE username = :username";
+        $stmtUserId = $this->db->prepare($queryUserId);
+        $stmtUserId->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmtUserId->execute();
+        return $stmtUserId->fetchColumn();
+    }
+
+    public function getUserObject($username) {
+        $stmt = $this->db->prepare("SELECT userId FROM User WHERE username = ?");
+        $stmt->execute([$username]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
 
 ?>

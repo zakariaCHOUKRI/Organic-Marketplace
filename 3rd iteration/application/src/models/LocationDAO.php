@@ -59,5 +59,14 @@ class LocationDAO {
 
         return $cities;
     }
+
+    public function fetchLocationFromId($locationId) {
+        // Fetch the location name based on the location ID
+        $queryLocation = "SELECT name FROM Location WHERE locationId = :locationId";
+        $stmtLocation = $this->db->prepare($queryLocation);
+        $stmtLocation->bindParam(':locationId', $locationId, PDO::PARAM_INT);
+        $stmtLocation->execute();
+        return $stmtLocation->fetchColumn();
+    }
 }
 ?>

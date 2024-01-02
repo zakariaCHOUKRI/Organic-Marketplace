@@ -4,56 +4,15 @@ if (!isset($_SESSION)) {
 }
 
 include_once '../models/Database.php';
-
-$db = Database::getInstance()->getConnection();
+include_once '../models/ProductDAO.php';
 
 $search = isset($_POST['search']) ? $_POST['search'] : '';
 $location = isset($_POST['location']) ? $_POST['location'] : '';
 $category = isset($_POST['category']) ? $_POST['category'] : '';
 
-if ($location == '23102003') {
-    $locationFilter = '';
-} else {
-    $locationFilter = ' AND l.locationId = :location';
-}
+$product = new ProductDAO();
 
-if ($category == '23102003') {
-    $categoryFilter = '';
-} else {
-    $categoryFilter = ' AND p.category = :category';
-}
-
-$query = "SELECT
-        p.productId,
-        p.name,
-        p.description,
-        p.price,
-        p.category,
-        l.name AS locationName,
-        pi.imageUrl
-    FROM Product p
-    JOIN Location l ON p.locationId = l.locationId
-    LEFT JOIN (
-        SELECT productId, MIN(imageUrl) AS imageUrl
-        FROM ProductImages
-        GROUP BY productId
-    ) pi ON p.productId = pi.productId
-    WHERE 
-        (p.name LIKE :search OR p.description LIKE :search)" . $locationFilter . $categoryFilter;
-
-$stmt = $db->prepare($query);
-$stmt->bindValue(':search', '%' . $search . '%', PDO::PARAM_STR);
-
-if ($location != '23102003') {
-    $stmt->bindValue(':location', $location, PDO::PARAM_INT);
-}
-
-if ($category != '23102003') {
-    $stmt->bindValue(':category', $category, PDO::PARAM_STR);
-}
-
-$stmt->execute();
-$searchResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$searchResults = $product->fetchSearchProducts($search, $location, $category);
 
 foreach ($searchResults as $result) {
     echo '<div class="col-sm-12 col-lg-4 col-md-6">';

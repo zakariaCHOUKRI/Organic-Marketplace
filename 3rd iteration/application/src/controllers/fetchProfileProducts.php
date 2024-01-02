@@ -5,24 +5,20 @@ if (!isset($_SESSION)) {
 }
 
 include_once '../models/Database.php';
+include_once '../models/UserDAO.php';
+include_once '../models/ProductDAO.php';
+include_once '../models/LocationDAO.php';
 
 $username = $_SESSION['username'];
 
 $db = Database::getInstance()->getConnection();
 
-// Fetch the user's ID based on the username
-$queryUserId = "SELECT userId FROM User WHERE username = :username";
-$stmtUserId = $db->prepare($queryUserId);
-$stmtUserId->bindParam(':username', $username, PDO::PARAM_STR);
-$stmtUserId->execute();
-$userId = $stmtUserId->fetchColumn();
+$user = new UserDAO();
+$prod = new ProductDAO();
+$loc = new LocationDAO();
 
-// Fetch the user's products
-$queryProducts = "SELECT * FROM Product WHERE userId = :userId";
-$stmtProducts = $db->prepare($queryProducts);
-$stmtProducts->bindParam(':userId', $userId, PDO::PARAM_INT);
-$stmtProducts->execute();
-$userProducts = $stmtProducts->fetchAll(PDO::FETCH_ASSOC);
+$userId = $user->getIdFromUsername($username);
+$userProducts = $prod->fetchUserProducts($userId);
 
 // Loop through user's products and generate HTML
 foreach ($userProducts as $product) {
@@ -32,19 +28,8 @@ foreach ($userProducts as $product) {
     $category = $product['category'];
     $locationId = $product['locationId'];
 
-    // Fetch the location name based on the location ID
-    $queryLocation = "SELECT name FROM Location WHERE locationId = :locationId";
-    $stmtLocation = $db->prepare($queryLocation);
-    $stmtLocation->bindParam(':locationId', $locationId, PDO::PARAM_INT);
-    $stmtLocation->execute();
-    $locationName = $stmtLocation->fetchColumn();
-
-    // Assuming you have another table to store product images named ProductImages
-    $queryProductImages = "SELECT imageUrl FROM ProductImages WHERE productId = :productId";
-    $stmtProductImages = $db->prepare($queryProductImages);
-    $stmtProductImages->bindParam(':productId', $productId, PDO::PARAM_INT);
-    $stmtProductImages->execute();
-    $productImages = $stmtProductImages->fetchAll(PDO::FETCH_COLUMN);
+    $locationName = $loc->fetchLocationFromId($locationId);
+    $productImages = $prod->getImageURLs($productId);
 
     // Generate HTML for each product
     echo '<tr>';
