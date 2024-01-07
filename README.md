@@ -22,7 +22,9 @@ The "Organic Marketplace" is a PHP web application that provides a user-friendly
    ```
 
 2. **Run the PHP Server:**
-   To run the application, you need to set up a PHP server and place the `/3rd iteration/application/` folder in the server directory. You can then access the application by navigating to `index.php` in your browser.
+   To run the application, you need to set up a PHP server and place the
+   - `/3rd iteration/application/` folder in the server directory. You can then access the application by navigating to
+   - `index.php` in your browser.
 
 3. **Populate the Database:**
    In order to fill the application with data, execute the following SQL files:
