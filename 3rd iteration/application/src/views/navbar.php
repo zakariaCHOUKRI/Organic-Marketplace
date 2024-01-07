@@ -20,9 +20,18 @@
 							<li class="nav-item active">
 								<a class="nav-link" href="home.php">Home</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="profile.php">My ads</a>
-							</li>
+							
+							<?php
+
+								if (isset($_SESSION["username"])) {
+									echo '<li class="nav-item">';
+									echo '<a class="nav-link" href="profile.php">My ads</a>';
+									echo '</li>';
+								}
+
+							?>
+
+							
 							<li class="nav-item">
 								<a class="nav-link" href="#">About us</a>
 							</li>
@@ -67,9 +76,16 @@
 									}
 								?>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link add-button" href="./createad.php"><i class="fa fa-plus-circle"></i> Post an ad</a>
-							</li>
+
+							<?php
+
+								if (isset($_SESSION["username"])) {
+									echo '<li class="nav-item">';
+									echo '<a class="nav-link add-button" href="./createad.php"><i class="fa fa-plus-circle"></i> Post an ad</a>';
+									echo '</li>';
+								}
+
+							?>
 						</ul>
 					</div>
 				</nav>

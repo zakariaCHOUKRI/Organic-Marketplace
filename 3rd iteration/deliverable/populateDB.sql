@@ -50,7 +50,7 @@ INSERT INTO Location (locationId, name) VALUES
 (46, 'Taza'),
 (47, 'Tetouan'),
 (48, 'Tiznit'),
-(49, 'Tiznit Province'),
+(49, 'Youssoufia'),
 (50, 'Zagora');
 
 INSERT INTO Product (name, description, price, category, userId, locationId) VALUES
@@ -67,37 +67,27 @@ INSERT INTO Product (name, description, price, category, userId, locationId) VAL
 
 
 INSERT INTO ProductImages (productId, imageUrl) VALUES
-(1, 'https://farmfreshontario.com/wp-content/uploads/2019/12/p3-100x100.jpg'),
-(1, 'https://www.harighotra.co.uk/images/Shutterstock/Potatoes_560x560.jpg'),
-(1, 'https://bcfresh.ca/wp-content/uploads/2021/11/Carrots.jpg'),
-(4, 'https://farmfreshontario.com/wp-content/uploads/2019/12/p3-100x100.jpg'),
-(4, 'https://bcfresh.ca/wp-content/uploads/2021/11/Carrots.jpg'),
-(4, 'https://www.harighotra.co.uk/images/Shutterstock/Potatoes_560x560.jpg'),
-(7, 'https://www.harighotra.co.uk/images/Shutterstock/Potatoes_560x560.jpg'),
-(7, 'https://farmfreshontario.com/wp-content/uploads/2019/12/p3-100x100.jpg'),
-(7, 'https://bcfresh.ca/wp-content/uploads/2021/11/Carrots.jpg'),
-(10, 'https://bcfresh.ca/wp-content/uploads/2021/11/Carrots.jpg'),
-(10, 'https://www.harighotra.co.uk/images/Shutterstock/Potatoes_560x560.jpg'),
-(10, 'https://farmfreshontario.com/wp-content/uploads/2019/12/p3-100x100.jpg');
+(1, 'https://img.passeportsante.net/1200x675/2021-05-03/i102192-tomate-nu.webp'),
+(1, 'https://img-3.journaldesfemmes.fr/ZfmzxO5Kyg0e3j1URh4V8Mf3slc=/1500x/smart/097777a79f144a048f7008573f8584d5/ccmcms-jdf/27424516.jpg'),
+(1, 'https://img.passeportsante.net/1200x675/2021-05-03/i101995-carotte-nu.webp'),
+(4, 'https://t3t8k6v8.rocketcdn.me/wp-content/uploads/2020/02/oignon-culture.jpg'),
+(7, 'https://img-3.journaldesfemmes.fr/acqDmicY39HFmrY6uv1tBkWLx_Q=/1500x/smart/9a02589b01df4f20b93cea2b74c02916/ccmcms-jdf/10660387.jpg'),
+(10, 'https://www.jardiner-malin.fr/wp-content/uploads/2019/10/citrouille-recolte.jpg');
 
 
--- Insert image URLs for products with Prepared Foods category
 INSERT INTO ProductImages (productId, imageUrl) VALUES
 (3, 'https://img.cuisineaz.com/660x660/2017/01/04/i115189-tajine-de-viande-pommes-de-terre-carotte-et-epices.jpeg'),
 (3, 'https://p6.storage.canalblog.com/61/63/720124/102852684_o.jpg'),
-(6, 'https://p6.storage.canalblog.com/61/63/720124/102852684_o.jpg'),
-(6, 'https://img.cuisineaz.com/660x660/2017/01/04/i115189-tajine-de-viande-pommes-de-terre-carotte-et-epices.jpeg'),
-(9, 'https://img.cuisineaz.com/660x660/2017/01/04/i115189-tajine-de-viande-pommes-de-terre-carotte-et-epices.jpeg'),
-(9, 'https://p6.storage.canalblog.com/61/63/720124/102852684_o.jpg');
+(6, 'https://tasteofmaroc.com/wp-content/uploads/2021/10/khoubiza-bakoula-moroccan-mallow-salad-1200w-opt.jpg'),
+(9, 'https://live.staticflickr.com/65535/52670856808_39d1a48266_c.jpg');
 
--- Insert image URLs for products with Coffee/Tea/Juice category
+
 INSERT INTO ProductImages (productId, imageUrl) VALUES
 (2, 'https://www.allrecipes.com/thmb/qXBaEIkAqDpDWqAVJbPZs9TxcZw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4513616-d1b91430eaab44e49230b21d22b88ba2.jpg'),
 (2, 'https://i.pinimg.com/564x/54/66/dc/5466dc8aeaf3631f9ff968b9209f479f.jpg'),
-(5, 'https://i.pinimg.com/564x/54/66/dc/5466dc8aeaf3631f9ff968b9209f479f.jpg'),
-(5, 'https://www.allrecipes.com/thmb/qXBaEIkAqDpDWqAVJbPZs9TxcZw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4513616-d1b91430eaab44e49230b21d22b88ba2.jpg'),
-(8, 'https://i.pinimg.com/564x/54/66/dc/5466dc8aeaf3631f9ff968b9209f479f.jpg'),
-(8, 'https://www.allrecipes.com/thmb/qXBaEIkAqDpDWqAVJbPZs9TxcZw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4513616-d1b91430eaab44e49230b21d22b88ba2.jpg');
+(5, 'https://bewilderedinmorocco.com/wp-content/uploads/2014/09/10343045_323077067850379_6964548403964440504_n.jpg'),
+(8, 'https://verygoodrecipes.com/images/blogs/fleur-d-oranger-masala-co/chilled-moroccan-avocado-juice.640x480.jpg');
+
 
 INSERT INTO User (username, password, email, contactDetails) VALUES
 ('Zakaria Choukri', '$2y$10$XQ4Bberv1LvJeUKSBAs1gu21ZWIo9RkaKgFpE0Szh3Py9pxiuUC5a', 'a@a.com', '0655695916'),
